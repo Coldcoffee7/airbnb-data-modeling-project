@@ -1,6 +1,6 @@
 name: 'airbnb'
 version: '1.0.0'
-profile: 'dbtlearn2'
+profile: 'airbnb'
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
@@ -15,7 +15,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 # Configuring models
 models:
-  dbtlearn2:
+  airbnb:
     +materialized: view
     dim:
       +materialized: table
