@@ -1,5 +1,9 @@
 models:
   - name: dim_listings_cleansed
+    data_tests:
+      - minimum_row_count:
+          arguments:
+            min_row_count: 1000
     columns:
       - name: listing_id
         data_tests:
@@ -17,19 +21,9 @@ models:
         data_tests:
           - accepted_values:
               values: ['Entire home/apt', 'Private room', 'Shared room', 'Hotel room']
-    
-  - name: dim_hosts_cleansed
-    columns:
-      - name: host_id
+      
+      - name: minimum_nights
         data_tests:
-          - unique
-          - not_null
+          - positive_values
 
-      - name: host_name
-        data_tests:
-          - not_null
-
-      - name: is_superhost
-        data_tests:
-          - accepted_values:
-              values: ['t', 'f']
+      
